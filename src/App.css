@@ -1,38 +1,716 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar_left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_left .hamburger_icon {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.navbar_left .hamburger_icon:hover {
+  cursor: pointer;
+  background: rgb(228, 227, 227);
+}
+
+.navbar_left .hamburger_icon i {
+  font-size: 20px;
+}
+
+.navbar_left .logo {
+  font-size: 20px;
+  letter-spacing: -1px;
+  font-weight: 500;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.navbar_left .logo i {
+  font-size: 25px;
+  color: rgb(248, 47, 47);
+  margin-right: 2px;
+}
+
+.navbar_left .logo sup {
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.navbar_center {
+  display: flex;
+}
+
+.navbar_center .search_bar input {
+  width: 500px;
+  padding: 8px 15px;
+  font-size: 16px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #b1b0b0;
+}
+
+.navbar_center .search_button button {
+  padding: 7px 20px;
+  border-radius: 0 20px 20px 0;
+  border: 1px solid #b1b0b0;
+  background-color: #eeeded;
+  cursor: pointer;
+}
+
+.navbar_center .search_button button:hover {
+  background-color: #dddcdc;
+}
+
+.navbar_center .search_button button i {
+  font-size: 20px;
+}
+
+.navbar_center .microphone_option button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eeeded;
+  border: none;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.navbar_center .microphone_option button:hover {
+  background-color: #dddcdc;
+}
+
+.navbar_center .microphone_option button i {
+  font-size: 20px;
+}
+
+.navbar_right {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar_right .three_dots {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar_right .sign_in_button {
+  border: 1px solid rgb(201, 201, 201);
+  margin-left: 20px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  color: rgb(62, 62, 244);
+  cursor: pointer;
+}
+
+.navbar_right .sign_in_button:hover {
+  background-color: rgb(222, 236, 251);
+  border: 1px solid rgb(222, 236, 251);
+}
+
+.navbar_right .sign_in_button i {
+  border: 1px solid rgb(62, 62, 244);
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 10px;
+  color: rgb(62, 62, 244);
+}
+
+.navbar_right .sign_in_button span {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.main_page {
+  display: flex;
+  align-items: flex-start;
+}
+
+.main_page_left {
+  width: 100px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: sticky;
+  top: 70px;
+  z-index: 3000;
+
+  background-color: #fff; 
 }
 
-.App-link {
-  color: #61dafb;
+.main_page_left div {
+  width: 70px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main_page_left div:hover {
+  background: rgb(243, 242, 242);
+}
+
+.main_page_left div span {
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.main_page_right {
+  margin: 0 20px;
+  flex: 1;
+}
+
+.main_page_right .page_titles {
+  display: flex;
+  position: sticky;
+  top: 60px;
+  z-index: 2000;
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.main_page_right .page_titles div {
+  background-color: rgb(232, 231, 231);
+  margin: 0 8px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main_page_right .page_titles .all {
+  background-color: #000;
+  color: #fff;
+}
+
+.main_page_right .page_titles .right_arrow {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  padding: 0;
+}
+
+.main_page_right .page_titles div:hover {
+  background-color: rgb(224, 223, 223);
+}
+
+.main_page_right .page_titles .all:hover {
+  background-color: #000;
+}
+
+.main_page_right_ads {
+  display: flex;
+  margin: 20px 0;
+
+}
+
+.main_page_right_ads .ads_left {
+  margin-right: 20px;
+  flex: 2;
+}
+
+.main_page_right_ads .ads_left iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+}
+
+.main_page_right_ads .ads_right {
+  flex: 1;
+}
+
+.main_page_right_ads .ads_right .ads_right_top {
+  margin-bottom: 10px;
+}
+
+.main_page_right_ads .ads_right .ads_right_top img {
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+
+}
+
+.ads_right_bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ads_right_bottom_left {
+  display: flex;
+  margin-left: 20px;
+}
+
+.ads_right_bottom .ads_right_bottom_left .ads_right_bottom_left_left img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.ads_right_bottom_left_right {
+  margin-left: 10px;
+}
+
+.ads_right_bottom_left_right p {
+  font-size: 12px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.ads_right_bottom_left_right button {
+  padding: 10px 15px;
+  background-color: rgb(74, 74, 252);
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.ads_right_bottom_left_right button:hover {
+  background-color: rgb(19, 19, 252);
+}
+
+.ads_right_bottom_right {
+  margin-right: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.main_content .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.main_content .row .vid {
+  width: 370px;
+  cursor: pointer;
+}
+
+.main_content .row .image img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.main_content .row .image iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.main_content .row .vid:hover .image iframe {
+  border-radius: 0;
+}
+
+.main_content .row .vid:hover .image img {
+  border-radius: 0;
+}
+
+.video_content {
+  display: flex;
+  margin-top: 10px;
+}
+
+.video_content .channel_logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.video_text {
+  margin-left: 20px;
+}
+
+.video_text h3 {
+  font-weight: 500;
+}
+
+.video_text p {
+  color: rgb(71, 70, 70);
+  font-size: 14px;
+}
+
+.video_text .channel_name {
+  margin: 5px 0 0 0;
+}
+
+.channel_vid_info sup {
+  font-weight: 900;
+  font-size: 15px;
+}
+
+hr {
+  height: 5px;
+  background-color: rgb(232, 231, 231);
+  border: none;
+  margin-bottom: 20px;
+}
+
+.show_more_btn {
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+.show_more_btn:hover {
+  background-color: rgb(227, 227, 227);;
+}
+
+.shorts_heading {
+  margin: 20px 0;
+  font-weight: 400;
+}
+
+.shorts_heading i {
+  color: rgb(250, 36, 36);
+  margin-right: 5px;
+}
+
+.shorts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.shorts .shorts_vid {
+  width: 220px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.shorts .shorts_vid .shorts_img {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.shorts .shorts_vid .shorts_img img {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  transition: all 0.3s; 
+}
+
+.shorts .shorts_vid .shorts_img iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.shorts .shorts_vid:hover .shorts_img iframe {
+  border-radius: 0;
+  transform: scale(1.05);
+}
+
+.shorts .shorts_vid:hover .shorts_img img {
+  transform: scale(1.05);
+}
+
+.shorts_content h4 {
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.shorts_content p {
+  color: rgb(79, 79, 79);
+}
+
+@media (max-width: 1200px) {
+  .navbar_center .search_bar input {
+    width: 400px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .page_titles .pakistan_national_cricket_team,
+  .page_titles .computer_science {
+    display: none;
+  }
+  
+  .main_page_right_ads .ads_left {
+    margin-right: 10px;
+    flex: none;
+    width: 600px;
+  }
+  
+  .main_page_right_ads .ads_right {
+    flex: none;
+  }
+  
+  .main_content .row .vid {
+    width: 270px;
+  }
+
+  .shorts .shorts_vid {
+    width: 160px;
+  } 
+}
+
+@media (max-width: 992px) {
+  .navbar_left .logo span {
+    display: none;
+  }
+
+  .navbar_center .search_bar input {
+    max-width: 300px;
+  }
+  
+  .page_titles .motivation,
+  .page_titles .html {
+    display: none;
+  }
+  
+  .main_page_right_ads .ads_left {
+    flex: 1;
+    width: 100%;
+  }
+  
+  .main_content .row .vid {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .main_content .row .third {
+    display: none;
+  }
+
+  .shorts .shorts_vid {
+    width: 32%;
+  }
+
+  .shorts .fourth,
+  .shorts .fifth {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar_left .logo {
+    margin-left: 5px;
+  }
+
+  .navbar_center .search_bar input {
+    max-width: 120px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 20px 0 0 20px;
+    margin-left: 20px;
+  }
+  
+  .navbar_center .search_button button {
+    padding: 6px 12px;
+  }
+  
+  .navbar_center .search_button button i {
+    font-size: 12px;
+  }
+  
+  .navbar_center .microphone_option button {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  }
+  
+  .navbar_center .microphone_option button i {
+    font-size: 14px;
+  }
+
+  .navbar_right .sign_in_button {
+    margin-left: 5px;
+    padding: 5px;
+  }
+
+  .navbar_right .sign_in_button i {
+    font-size: 10px;
+  }
+
+  .navbar_right .sign_in_button span {
+    font-size: 12px;
+  }
+
+  .main_page {
+    display: block;
+  }
+  
+  .main_page_left {
+    display: none;
+  }
+
+  .main_page_right .page_titles .podcasts,
+  .main_page_right .page_titles .live {
+    display: none;
+  }
+  
+  .main_page_right_ads .ads_left iframe {
+    height: 200px;
+  }
+  
+  .main_page_right_ads .ads_right {
+    flex: none;
+  }
+  
+  .main_page_right_ads .ads_right .ads_right_top {
+    margin-bottom: 10px;
+  }
+  
+  .main_page_right_ads .ads_right .ads_right_top img {
+    width: 150px;
+    height: 100px;
+  
+  }
+  
+  .ads_right_bottom .ads_right_bottom_left .ads_right_bottom_left_left img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .ads_right_bottom_left_right button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .video_content .channel_logo img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .video_text {
+    margin-left: 10px;
+  }
+  
+  .video_text h3 {
+    font-size: 14px;
+  }
+  
+  .video_text p {
+    font-size: 12px;
+  }
+  
+  .shorts .shorts_content h4 {
+    font-size: 14px;
+  }
+
+  .shorts .shorts_content p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar_left .hamburger_icon {
+    padding: 8px;
+  }
+  
+  .navbar_left .hamburger_icon i {
+    font-size: 12px;
+  }
+  
+  .navbar_left .logo {
+    margin-left: 5px;
+  }
+  
+  .navbar_left .logo i {
+    font-size: 20px;
+  }  
+
+  .navbar_center .search_bar input {
+    max-width: 100px;
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .navbar_center .search_button button {
+    padding: 7.5px 12px;
+  }
+  
+  .navbar_center .search_button button i {
+    font-size: 10px;
+  }
+  
+  .navbar_center .microphone_option button {
+    width: 30px;
+    height: 30px;
+  }
+    
+  .navbar_center .microphone_option button i {
+    font-size: 15px;
+  }
+  
+  .navbar_right {
+    display: none;
+  }
+
+  .main_page_right {
+    margin: 0;
+    padding: 20px;
+  }
+
+  .main_page_right .page_titles {
+    top: 50px;
+  }
+
+  .main_page_right .page_titles .wickets,
+  .main_page_right .page_titles .Nouman_Ali_Khan {
+    display: none;
+  }
+
+  .main_page_right_ads {
+    flex-direction: column;
+  }
+
+  .main_content .row {
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .main_content .row .vid {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+
+  .shorts .shorts_vid {
+    width: 48%;
+  }
+
+  .shorts .third {
+    display: none;
+  }
+  
+  .shorts .shorts_content h4 {
+    font-size: 12px;
+  }
+
+  .shorts .shorts_content p {
+    font-size: 10px;
   }
 }
